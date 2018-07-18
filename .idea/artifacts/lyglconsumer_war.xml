@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lyglconsumer:war">
+    <output-path>$PROJECT_DIR$/lyglconsumer/target</output-path>
+    <root id="archive" name="lyglconsumer.war">
+      <element id="artifact" artifact-name="lyglconsumer:war exploded" />
+    </root>
+  </artifact>
+</component>
