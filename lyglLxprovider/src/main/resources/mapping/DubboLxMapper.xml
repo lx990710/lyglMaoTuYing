@@ -3,4 +3,63 @@
  
 <mapper namespace="com.jk.mapper.DubboLxDao">
 
+<select id="selectUSerCount" resultType="com.jk.model.lx.LoginUser">
+SELECT  *  FROM  `sx-wuzu`.`lygl-userlogin`
+ WHERE username = #{username}
+  AND password = #{password}
+</select>
+
+ <insert id="adduserlogin">
+INSERT INTO user_ipname
+            (
+             ipadress,
+             idname,
+             username,denglushijian)
+VALUES (
+        #{ipadress},
+        #{idname},
+        #{username},#{denglushijian})
+ </insert>
+
+    <select id="yanusername" resultType="com.jk.model.lx.LoginUser">
+        SELECT  *  FROM  `sx-wuzu`.`lygl-userlogin`
+ WHERE username = #{username}
+    </select>
+
+    <insert id="saveuser">
+
+        INSERT INTO `sx-wuzu`.`lygl-userlogin`
+            (`username`,
+             `password`,
+             `zhenshiname`,
+             `lianxidianhua`,
+             `qq`,
+             `email`,
+             `zhuceshijian`)
+VALUES (
+        #{username},
+        #{password},
+        #{zhenshiname},
+         #{lianxidianhua},
+         #{qq},
+         #{email},
+        #{zhuceshijian});
+    </insert>
+
+    <select id="zuijingdenglu" resultType="com.jk.model.lx.userIpname">
+
+        SELECT * from  user_ipname where username = #{username}
+    </select>
+
+    <delete id="deletesipname">
+
+       DELETE
+FROM `sx-wuzu`.`user_ipname`
+WHERE `pid` = #{pid}
+    </delete>
+
+    <select id="zuijingdenglucountlist" resultType="com.jk.model.lx.userIpname">
+  SELECT * from  user_ipname where username = #{username}
+          LIMIT #{offset},#{limit}
+    </select>
 </mapper>

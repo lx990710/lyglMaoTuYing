@@ -20,13 +20,13 @@
    
    
    <!-- 使用zookeeper注册中心暴露服务地址 -->    
-   <dubbo:registry address="zookeeper://192.168.12.128:2181" register="" check="false" subscribe="false" />
+   <dubbo:registry address="zookeeper://192.168.44.129:2181" register="" check="false" subscribe="false" />
    
    <!-- dubbo端口号 -->  
    <dubbo:protocol name="dubbo" port="20881" ></dubbo:protocol>
 
 	<!-- 注入实现类 -->
-   <bean id="dubboService" class="com.jk.service.impl.DubboServiceImpl"></bean>
+   <bean id="dubbolxService" class="com.jk.service.impl.DubboServiceImpl"></bean>
    
    <dubbo:service interface="com.jk.service.DubboLxService" ref="dubbolxService"  timeout="10000"/>
    
