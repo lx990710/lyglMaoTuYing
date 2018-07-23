@@ -16,7 +16,7 @@
       	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<!-- 注解扫描包 控制层 配置注解扫描 并且只扫描控制层 -->
-	<context:component-scan base-package="com.jk.controller" />
+	<context:component-scan base-package="com.jk.controller.lx" />
 	<!-- 开启注解 开启springMVC的注解驱动 -->
 	<mvc:annotation-driven />
  
